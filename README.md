@@ -116,3 +116,6 @@ Based on my exploration of the codebase, here's a detailed step-by-step guide to
   3. Genesis generation: Creates genesis with validators and initial funds
   4. Startup: Seeds start first (3s delay), then other nodes (1s delay)
   5. Monitoring: Watches for panics, deadlocks, block production
+
+  
+  export NIMIQ_OVERRIDE_DEVNET_CONFIG=./dev-albatross.toml
