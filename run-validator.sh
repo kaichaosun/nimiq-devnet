@@ -25,4 +25,7 @@ case "$1" in
   *) echo "Invalid validator id"; exit 1 ;;
 esac
 
+# Set devnet configuration override
+export NIMIQ_OVERRIDE_DEVNET_CONFIG="$ROOT_DIR/dev-albatross.toml"
+
 exec "$CLIENT" -c "$ROOT_DIR/$CONFIG"

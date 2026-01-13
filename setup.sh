@@ -20,10 +20,8 @@ for i in 1 2 3 4; do
     WINDOW_INDEX=$(($WINDOW_BASE + i - 1))
   fi
 
-  sleep 10
   # Send commands to the specific window (no panes needed)
   tmux send-keys -t "$SESSION:$WINDOW_INDEX" \
-    "export NIMIQ_OVERRIDE_DEVNET_CONFIG=$DEVNET_CONFIG" C-m \
     "./run-validator.sh $i" C-m
 done
 
