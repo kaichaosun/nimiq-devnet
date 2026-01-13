@@ -1,14 +1,20 @@
+// Validator Address:
+
 Address:       NQ43 8U7V C3UE VRGS 8HE7 C43P DEJ3 V0XJ 6NPN
 Address (raw): 470fd60f8eee61a445c7610776ba43e83d235af6
 Public Key:    fe53913e040c18bb63f59bb3268f4b42e1738a965484d0c1c772f70057916bd4
 Private Key:   822fb64650d4093220751fa9a44173ec38607ff411b78dc7e54056273f2852d0
 
 
+// Signing Key:
+
 Address:       NQ95 678D 4AQE 492D YDT0 DKC1 REJB Q7K4 59Q9
 Address (raw): 31d0d22b0e2244dfb7606cd81cba4bc1e642a709
 Public Key:    fefbcec12545aed3b62812e673f5356720fea039aa1ae301865a0ef45e959535
 Private Key:   b0e7a4ddb0d40912348723eacb26f98755a2be3054d78ee295a46382c44a8032
 
+
+// Voting Key:
 
 # Public Key:
 

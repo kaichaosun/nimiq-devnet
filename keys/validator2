@@ -1,4 +1,4 @@
-## addr1:
+// Validator Address:
 
 Address:       NQ50 M8T2 8U7N 2BNQ CSLD 2251 X9EF 5GVD EY9G
 Address (raw): aa362470f612ed866a8d108a1f25cf2c3ad77d30
@@ -6,14 +6,15 @@ Public Key:    ce0af6097038a21c6e90183415a072dff24d0a04307eb54a32bc6c463db4aec5
 Private Key:   6576c897cbad8d1783cd2852f3ed35054be48bb854930459679b9ef8933e4e74
 
 
-## addr2:
+// Signing Key:
 
 Address:       NQ97 C0VD BADY M36N DSN4 7QRD EHLJ 0L1D PDHU
 Address (raw): 603ad5a9bfa8cd66eac43e32d746920502dbb63c
 Public Key:    babdc6b231aa8a7088edb037897736b11fff4bd1f9fa817888bf1e69c49396ee
 Private Key:   df6ac780905ea7fef5337d0a61f55dacf2f26d8d90269db41949117562de31fd
 
-## bls:
+
+// Voting Key:
 
 # Public Key:
 
