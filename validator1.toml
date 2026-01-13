@@ -2,6 +2,11 @@
 listen_addresses = [
   "/ip4/127.0.0.1/tcp/8443/ws",
 ]
+seed_nodes = [
+  { address = "/ip4/127.0.0.1/tcp/8445/ws" },
+  { address = "/ip4/127.0.0.1/tcp/8446/ws" },
+  { address = "/ip4/127.0.0.1/tcp/8447/ws" },
+]
 allow_loopback_addresses = true
 desired_peer_count = 1
 peer_key_file = "./tmp/.nimiq1/peer_key.dat"
@@ -14,8 +19,7 @@ sync_mode = "full"
 path = "./tmp/.nimiq1"
 
 [rpc-server]
-
-[metrics-server]
+port = 8648
 
 [log]
 level = "debug"

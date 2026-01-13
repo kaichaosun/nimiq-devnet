@@ -4,6 +4,8 @@ listen_addresses = [
 ]
 seed_nodes = [
   { address = "/ip4/127.0.0.1/tcp/8443/ws" },
+  { address = "/ip4/127.0.0.1/tcp/8445/ws" },
+  { address = "/ip4/127.0.0.1/tcp/8446/ws" },
 ]
 allow_loopback_addresses = true
 desired_peer_count = 1
