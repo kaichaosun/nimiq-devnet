@@ -1,6 +1,6 @@
 # Nimiq DevNet Setup
 
-A development network setup for running 4 Nimiq validators locally for testing and development purposes.
+A development network setup for running Nimiq validators locally for testing and development purposes.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ Before running the devnet, make sure you have the following installed:
 
 ## Network Configuration
 
-This devnet runs 4 validators with the following configuration:
+This devnet runs validators with the following configuration:
 
 | Validator | Port | RPC Port | Database Path |
 |-----------|------|----------|---------------|
@@ -30,7 +30,12 @@ You can run the devnet in two ways:
 
 ### Method 1: Automated Setup with tmux (Recommended)
 
-This method automatically starts all 4 validators in a single tmux session:
+This method automatically starts all validators in a single tmux session:
+
+```bash
+# clear old data
+./clean.sh
+```
 
 ```bash
 ./setup.sh
@@ -38,7 +43,7 @@ This method automatically starts all 4 validators in a single tmux session:
 
 This will:
 - Create a tmux session named `nimiq-validators`
-- Start all 4 validators in separate tmux windows
+- Start each validator in separate tmux windows
 - Automatically connect clients
 
 To attach to the tmux session and see the validators running:
@@ -62,40 +67,27 @@ To stop all validators and exit:
 tmux kill-session -t nimiq-validators
 ```
 
-### Method 2: Manual Setup (4 Separate Terminals)
+### Method 2: Manual Setup (Separate Terminals)
 
 Run each validator manually in separate terminal windows/tabs:
 
-**Terminal 1 (Validator 1 - Seed Node):**
 ```bash
 ./run-validator.sh 1
 ```
 
-**Terminal 2 (Validator 2):**
 ```bash
 ./run-validator.sh 2
 ```
 
-**Terminal 3 (Validator 3):**
 ```bash
 ./run-validator.sh 3
 ```
 
-**Terminal 4 (Validator 4):**
 ```bash
 ./run-validator.sh 4
 ```
 
 ## Accessing the Network
-
-### RPC Endpoints
-
-Each validator exposes a JSON-RPC interface:
-
-- Validator 1: `http://127.0.0.1:8648`
-- Validator 2: `http://127.0.0.1:8649`
-- Validator 3: `http://127.0.0.1:8650`
-- Validator 4: `http://127.0.0.1:8651`
 
 ### Example RPC Calls
 
@@ -111,44 +103,17 @@ curl -X POST http://127.0.0.1:8648 \
   -d '{"method":"getPeerCount","params":[],"id":1,"jsonrpc":"2.0"}'
 ```
 
-## File Structure
-
-```
-.
-├── README.md                 # This file
-├── setup.sh                  # Automated tmux setup script
-├── run-validator.sh           # Manual validator runner script
-├── dev-albatross.toml         # Genesis configuration for devnet
-├── validator1.toml            # Configuration for validator 1
-├── validator2.toml            # Configuration for validator 2  
-├── validator3.toml            # Configuration for validator 3
-├── validator4.toml            # Configuration for validator 4
-├── .nimiq-version            # Nimiq client version (v1.2.1)
-├── keys/                     # Validator key files
-│   ├── validator1
-│   ├── validator2
-│   ├── validator3
-│   └── validator4
-├── tmp/                      # Runtime data and databases
-│   ├── .nimiq1/
-│   ├── .nimiq2/
-│   ├── .nimiq3/
-│   └── .nimiq4/
-├── bin/                      # Nimiq client binaries
-└── scripts/                  # Helper scripts
-```
-
 ## Troubleshooting
 
 ### Common Issues
 
-1. **Port already in use**: Make sure no other processes are using ports 8443-8447 and 8648-8651
-2. **Permission errors**: Ensure the scripts have execute permissions:
+- **Port already in use**: Make sure no other processes are using ports 8443-8447 and 8648-8651
+- **Permission errors**: Ensure the scripts have execute permissions:
    ```bash
    chmod +x setup.sh run-validator.sh
    ```
-3. **tmux not found**: Install tmux using your system's package manager
-4. **Validators not connecting**: Make sure validator 1 is running before starting others
+- **tmux not found**: Install tmux using your system's package manager
+- **Validators not connecting**: Make sure validator 1 is running before starting others
 
 ### Logs and Debugging
 
