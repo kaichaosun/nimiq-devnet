@@ -3,12 +3,17 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$SCRIPT_DIR"
-CLIENT="$ROOT_DIR/bin/nimiq-client"
+VERSION="${2:-$(cat "$ROOT_DIR/.nimiq-version")}"
+if [ -z "$VERSION" ]; then
+  echo "Error: No version specified and .nimiq-version file not found or empty."
+  exit 1
+fi
+CLIENT="$ROOT_DIR/bin/nimiq-client-$VERSION"
 
-"$ROOT_DIR/scripts/ensure-nimiq-client.sh"
+"$ROOT_DIR/scripts/ensure-nimiq-client.sh" "$VERSION"
 
-if [ $# -ne 1 ]; then
-  echo "Usage: $0 {1|2|3|4}"
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 {1|2|3|4} [VERSION]"
   exit 1
 fi
 

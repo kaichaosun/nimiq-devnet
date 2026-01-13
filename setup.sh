@@ -15,12 +15,12 @@ for i in 1 2 3 4; do
     # First window already exists, calculate its index
     WINDOW_INDEX=$WINDOW_BASE
   else
-    sleep 3
     # Create new window
     tmux new-window -t "$SESSION"
     WINDOW_INDEX=$(($WINDOW_BASE + i - 1))
   fi
 
+  sleep 10
   # Send commands to the specific window (no panes needed)
   tmux send-keys -t "$SESSION:$WINDOW_INDEX" \
     "export NIMIQ_OVERRIDE_DEVNET_CONFIG=$DEVNET_CONFIG" C-m \
